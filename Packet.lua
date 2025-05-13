@@ -2,9 +2,9 @@
 
 
 -- Requires
-local Signal = require(script.Signal)
-local Task = require(script.Task)
-local Types = require(script.Types)
+local Signal = require(script.Parent.Signal)
+local Task = require(script.Parent.Task)
+local Types = require(script.Parent.Types)
 
 
 -- Types
