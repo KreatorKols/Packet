@@ -1,5 +1,5 @@
 {
-  "name": "packet",
+  "name": "@kreatorkols/packet",
   "version": "1.0.1",
   "description": "Networking module",
   "main": "Packet.lua",
