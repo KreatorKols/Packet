@@ -1,19 +1,20 @@
 {
   "name": "@kreatorkols/packet",
-  "version": "1.0.1",
+  "version": "1.0.0",
   "description": "Networking module",
-  "main": "Packet.lua",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+  "keywords": [
+    "Roblox",
+    "Nevermore",
+    "Packet",
+    "Lua"
+  ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/KreatorKols/Packet.git"
+    "url": "https://github.com/KreartorKols/Packet.git",
+    "directory": "Packet.lua"
   },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/KreatorKols/Packet/issues"
-  },
-  "homepage": "https://github.com/KreatorKols/Packet#readme"
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  }
 }
