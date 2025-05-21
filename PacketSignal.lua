@@ -2,7 +2,7 @@
 
 
 -- Requires
-local Task = require(script.Parent.PacketSignalTask)
+local Task = require(script.Parent.PacketTask)
 
 
 -- Types
