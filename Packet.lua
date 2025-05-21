@@ -2,9 +2,11 @@
 
 
 -- Requires
-local Signal = require(script.Parent.Signal)
-local Task = require(script.Parent.Task)
-local Types = require(script.Parent.Types)
+local require = require(script.Parent.loader).load(script)
+
+local Signal = require("PacketSignal")
+local Task = require("PacketTask")
+local Types = require("PacketTypes")
 
 
 -- Types

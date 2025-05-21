@@ -2,7 +2,7 @@
 
 
 -- Requires
-local Task = require(script.Parent.Task)
+local Task = require(script.Parent.PacketSignalTask)
 
 
 -- Types
@@ -24,8 +24,8 @@ export type Connection<A... = ()> = {
 	Function:				(player: Player, A...) -> (),
 	Thread:					thread,
 	Disconnect:				(self: Connection<A...>) -> (),
+    Destroy:            (self: Connection<A...>) -> (),
 }
-
 
 -- Varables
 local Signal = {}			:: Signal<...any>
@@ -96,6 +96,6 @@ function Connection:Disconnect()
 	self.Previous.Next = self.Next
 	self.Next.Previous = self.Previous
 end
-
+Connection.Destroy = Connection.Disconnect
 
 return Constructor

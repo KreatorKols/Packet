@@ -30,6 +30,8 @@ export type Cursor = {
 
 
 -- Varables
+local typePath = script.Parent
+
 local activeCursor			: Cursor
 local activeBuffer			: buffer
 local bufferLength			: number
@@ -439,7 +441,7 @@ writes.ColorSequence = function(value: ColorSequence)
 end
 
 local characterIndices = {}
-local characters = require(script.Characters)
+local characters = require(typePath.Characters)
 for index, value in characters do characterIndices[value] = index end
 local characterBits = math.ceil(math.log(#characters + 1, 2))
 local characterBytes = characterBits / 8
@@ -469,28 +471,28 @@ writes.Characters = function(value: string)
 end
 
 local enumIndices = {}
-local enums = require(script.Enums)
+local enums = require(typePath.Enums)
 for index, static in enums do enumIndices[static] = index end
 types.EnumItem = ("EnumItem" :: any) :: EnumItem
 reads.EnumItem = function() return enums[ReadU8()]:FromValue(ReadU16()) end
 writes.EnumItem = function(value: EnumItem) Allocate(3) WriteU8(enumIndices[value.EnumType]) WriteU16(value.Value) end
 
 local staticIndices = {}
-local statics = require(script.Static1)
+local statics = require(typePath.Static1)
 for index, static in statics do staticIndices[static] = index end
 types.Static1 = ("Static1" :: any) :: any
 reads.Static1 = function() return statics[ReadU8()] end
 writes.Static1 = function(value: any) Allocate(1) WriteU8(staticIndices[value] or 0) end
 
 local staticIndices = {}
-local statics = require(script.Static2)
+local statics = require(typePath.Static2)
 for index, static in statics do staticIndices[static] = index end
 types.Static2 = ("Static2" :: any) :: any
 reads.Static2 = function() return statics[ReadU8()] end
 writes.Static2 = function(value: any) Allocate(1) WriteU8(staticIndices[value] or 0) end
 
 local staticIndices = {}
-local statics = require(script.Static3)
+local statics = require(typePath.Static3)
 for index, static in statics do staticIndices[static] = index end
 types.Static3 = ("Static3" :: any) :: any
 reads.Static3 = function() return statics[ReadU8()] end
